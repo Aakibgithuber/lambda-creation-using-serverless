@@ -1,0 +1,9 @@
+{
+    "name": "Rahul Sharma",
+    "email": "rahul@example.com",
+    "age": 25,
+    "orders": [
+        { "id": "A101", "amount": 250 },
+        { "id": "B202", "amount": 450 }
+    ]
+}

@@ -1,0 +1,26 @@
+service: html-to-pdf-lambda
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+  memorySize: 512
+  timeout: 30
+  environment:
+    AWS_BUCKET_NAME: "mario121bucket"
+    AWS_BUCKET_REGION: "ap-south-1"
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource: "arn:aws:s3:::mario121bucket/*"
+
+functions:
+  convertHtmlToPdf:
+    handler: handler.main
+    events:
+      - http:
+          path: convert
+          method: post
+
