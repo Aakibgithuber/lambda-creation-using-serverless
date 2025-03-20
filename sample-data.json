@@ -1,9 +1,1521 @@
 {
-    "name": "Rahul Sharma",
-    "email": "rahul@example.com",
-    "age": 25,
-    "orders": [
-        { "id": "A101", "amount": 250 },
-        { "id": "B202", "amount": 450 }
+    "contact_information": [
+        {
+            "id": 727,
+            "full_name": "ABCD",
+            "date_of_birth": "2015-03-02",
+            "gender": "Male",
+            "lead_id": 651,
+            "contact_person_role": "DECISION_MAKER",
+            "departments": {
+                "id": 1,
+                "department_name": "Sales",
+                "created_at": "2024-10-29T17:05:52.584Z",
+                "updated_at": "2024-10-29T17:05:52.584Z"
+            },
+            "designation": {
+                "id": 1,
+                "designation_name": "IT Lead",
+                "created_at": "2024-10-29T17:18:25.006Z",
+                "updated_at": "2024-10-29T17:18:25.006Z"
+            },
+            "emails": [
+                {
+                    "id": 1221,
+                    "email": "abc@gmail.com",
+                    "is_primary": true,
+                    "is_verified": true,
+                    "contact_info_id": 727,
+                    "created_at": "2025-02-14T10:02:00.607Z",
+                    "updated_at": "2025-02-14T10:02:00.607Z"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "id": 1251,
+                    "phone_number": "1234567890",
+                    "country_code": "+91",
+                    "is_primary": true,
+                    "is_verified": true,
+                    "is_whatsapp": true,
+                    "contact_info_id": 727,
+                    "created_at": "2025-02-14T10:02:00.607Z",
+                    "updated_at": "2025-02-14T10:02:00.607Z"
+                }
+            ],
+            "social_links": [
+                {
+                    "id": 247,
+                    "social_platform": "FACEBOOK",
+                    "url": "https://facebook.com",
+                    "contact_info_id": 727,
+                    "created_at": "2025-03-19T10:14:41.342Z",
+                    "updated_at": "2025-03-19T10:14:41.342Z"
+                }
+            ]
+        }
+    ],
+    "corporate_information": {
+        "id": 644,
+        "source_of_leads": "SMS Marketing",
+        "page_type": "SMS Marketing",
+        "conversion_probability": 0,
+        "expected_revenue": "1000.00000",
+        "address": {
+            "id": 845,
+            "address": "Mumbai",
+            "city": null,
+            "states": null,
+            "country": null,
+            "pincode": "10000",
+            "address_type": "work"
+        },
+        "client": {
+            "client_name": "Testing",
+            "client_id": "TEM6YUI1"
+        },
+        "industry": {
+            "id": 2,
+            "name": "Mechanical"
+        },
+        "subIndustry": {
+            "id": 1,
+            "name": "Software Development"
+        },
+        "lead": {
+            "id": 651,
+            "priority": true,
+            "group": {
+                "corporate_group_name": "KAITOTECH",
+                "group_id": "KOI525TECH"
+            }
+        }
+    },
+    "documents": [
+        {
+            "id": 667,
+            "document_id": 1015,
+            "lead_id": 651,
+            "user_id": "13db49fa-2115-4a9b-8f35-1a946a879eff",
+            "created_at": "2025-02-14T10:04:05.429Z",
+            "updated_at": "2025-02-14T10:04:05.429Z",
+            "document": {
+                "id": 1015,
+                "document_source": "Customer",
+                "document_type": "Invoice",
+                "file_name": "Sample-doc-file-100kb.doc",
+                "file_size": "102400",
+                "mime_type": "application/msword",
+                "s3_bucket": "kaito-dev-document",
+                "s3_path": "document/customer/651/Sample-doc-file-100kb.doc",
+                "created_at": "2025-02-14T10:04:05.429Z",
+                "updated_at": "2025-02-14T10:04:05.429Z"
+            }
+        }
+    ],
+    "coverages": [
+        {
+            "id": 3393,
+            "is_clone": true,
+            "title": "Expiring Terms",
+            "coverages": [
+                {
+                    "name": "family-definition",
+                    "title": "Family Definition",
+                    "value": "emp",
+                    "options": [
+                        {
+                            "name": "emp",
+                            "title": "EMP",
+                            "value": "Employee only",
+                            "conditions": [
+                                {
+                                    "value": "Individual",
+                                    "cover_name": "sum-insured-types",
+                                    "option_name": "individual"
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "sum-insured",
+                                    "option_name": "uniform"
+                                },
+                                {
+                                    "value": "Not Covered",
+                                    "cover_name": "new-born-baby-coverage",
+                                    "option_name": "not_covered"
+                                },
+                                {
+                                    "value": "Mid term addition of dependent are not allowed.",
+                                    "cover_name": "mid-term-addition-of-dependents",
+                                    "option_name": "not_allowed"
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "co-payment",
+                                    "option_name": "applicable"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "esc",
+                            "title": "ESC",
+                            "value": "Employee, Spouse & 2 Dependent Children.",
+                            "comment": "",
+                            "conditions": [
+                                {
+                                    "value": "",
+                                    "cover_name": "sum-insured-types",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "sum-insured",
+                                    "option_name": "graded"
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "new-born-baby-coverage",
+                                    "option_name": "covered"
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "mid-term-addition-of-dependents",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "co-payment",
+                                    "option_name": "applicable"
+                                }
+                            ],
+                            "number_of_children": "2",
+                            "dependent_daughter_cover": ""
+                        },
+                        {
+                            "name": "escp/i",
+                            "title": "ESCP/I",
+                            "value": "Employee, Spouse & 2 Dependent Children.",
+                            "conditions": [
+                                {
+                                    "value": "",
+                                    "cover_name": "sum-insured-types",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "sum-insured",
+                                    "option_name": "graded"
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "new-born-baby-coverage",
+                                    "option_name": "covered"
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "mid-term-addition-of-dependents",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "co-payment",
+                                    "option_name": "applicable"
+                                }
+                            ],
+                            "cross_combination": "",
+                            "number_of_children": "2",
+                            "dependent_daughter_cover": "",
+                            "parents_and_in_laws_cover": ""
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": "",
+                            "conditions": [
+                                {
+                                    "value": "",
+                                    "cover_name": "sum-insured-types",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "sum-insured",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "new-born-baby-coverage",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "mid-term-addition-of-dependents",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "co-payment",
+                                    "option_name": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "position": 1,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Employee only"
+                },
+                {
+                    "name": "breakup-of-lives",
+                    "title": "Breakup Of Lives",
+                    "options": [
+                        {
+                            "name": "number_of_employees",
+                            "title": "Number Of Employees",
+                            "options": [
+                                {
+                                    "name": "inception",
+                                    "value": 100
+                                },
+                                {
+                                    "name": "expiry",
+                                    "value": 0
+                                },
+                                {
+                                    "name": "renewal",
+                                    "value": 100
+                                }
+                            ]
+                        },
+                        {
+                            "name": "number_of_dependents",
+                            "title": "Number Of Dependents",
+                            "options": [
+                                {
+                                    "name": "inception",
+                                    "value": 50
+                                },
+                                {
+                                    "name": "expiry",
+                                    "value": 0
+                                },
+                                {
+                                    "name": "renewal",
+                                    "value": 50
+                                }
+                            ]
+                        },
+                        {
+                            "name": "total_lives",
+                            "title": "Total Lives",
+                            "options": [
+                                {
+                                    "name": "inception",
+                                    "value": 150
+                                },
+                                {
+                                    "name": "expiry",
+                                    "value": 0
+                                },
+                                {
+                                    "name": "renewal",
+                                    "value": 150
+                                }
+                            ]
+                        }
+                    ],
+                    "position": 3,
+                    "is_optional": false,
+                    "breakup_type": [
+                        {
+                            "name": "inception",
+                            "title": "Inception"
+                        },
+                        {
+                            "name": "expiry",
+                            "title": "Expiry"
+                        },
+                        {
+                            "name": "renewal",
+                            "title": "Renewal"
+                        }
+                    ],
+                    "is_difference": false,
+                    "selected_text": "0"
+                },
+                {
+                    "name": "sum-insured",
+                    "title": "Sum Insured",
+                    "value": "",
+                    "options": [
+                        {
+                            "name": "uniform",
+                            "title": "Uniform",
+                            "value": "Sum insured not selected",
+                            "comment": "",
+                            "sum_insured": ""
+                        },
+                        {
+                            "name": "various",
+                            "title": "Various",
+                            "value": "Sum insured not selected",
+                            "custom": "",
+                            "comment": "",
+                            "sum_insured": []
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 5,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Sum insured not selected"
+                },
+                {
+                    "name": "sum-insured-types",
+                    "title": "Sum Insured Type",
+                    "value": "individual",
+                    "options": [
+                        {
+                            "name": "family_floater",
+                            "title": "Family Floater",
+                            "value": "",
+                            "comment": ""
+                        },
+                        {
+                            "name": "individual",
+                            "title": "Individual",
+                            "value": "Individual",
+                            "comment": ""
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 6,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Individual"
+                },
+                {
+                    "name": "domiciliary-treatment",
+                    "title": "Domiciliary Treatment",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "",
+                            "comment": "",
+                            "selected_value": ""
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 7,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "first-30-days-waiting-period",
+                    "title": "First 30 Days Waiting Period",
+                    "value": "waived_off",
+                    "options": [
+                        {
+                            "name": "waived_off",
+                            "title": "Waived Off",
+                            "value": "Waived Off",
+                            "content": null
+                        },
+                        {
+                            "name": "applicable",
+                            "title": "Applicable",
+                            "value": "Not Applicable"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 8,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Waived Off"
+                },
+                {
+                    "name": "pre-existing-disease",
+                    "title": "Pre Existing Disease",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "Covered",
+                            "content": null
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 9,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "exclusion",
+                    "title": "1/2/3/4 year exclusion",
+                    "value": "waived_off",
+                    "options": [
+                        {
+                            "name": "waived_off",
+                            "title": "Waived Off",
+                            "value": "Waived Off",
+                            "content": null
+                        },
+                        {
+                            "name": "applicable",
+                            "title": "Applicable",
+                            "value": "Not Applicable"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 10,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Waived Off"
+                },
+                {
+                    "name": "room-rent",
+                    "title": "Room Rent",
+                    "value": "restricted",
+                    "options": [
+                        {
+                            "name": "restricted",
+                            "title": "Restricted",
+                            "value": "Normal room rent limit 0.75% of the sum insured per day",
+                            "icc_iccu": {
+                                "type": "",
+                                "unit": "",
+                                "value": null
+                            },
+                            "selected": "normal_room_rent",
+                            "conditions": [
+                                {
+                                    "value": "",
+                                    "cover_name": "proportionate-deduction",
+                                    "option_name": "applicable"
+                                }
+                            ],
+                            "normal_room_rent": {
+                                "type": "static",
+                                "unit": "percent",
+                                "value": 0.75
+                            }
+                        },
+                        {
+                            "name": "no_limit",
+                            "title": "No Limit",
+                            "value": "No restriction on room rent limit",
+                            "comment": "",
+                            "conditions": [
+                                {
+                                    "value": "Not Applicable",
+                                    "cover_name": "proportionate-deduction",
+                                    "option_name": "not_applicable"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": "",
+                            "conditions": [
+                                {
+                                    "value": "",
+                                    "cover_name": "proportionate-deduction",
+                                    "option_name": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "position": 11,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "No restriction on room rent limit"
+                },
+                {
+                    "name": "maternity-benefit",
+                    "title": "Maternity Benefit",
+                    "value": "covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "",
+                            "comment": "Maternity benefit is covered for first 2 children",
+                            "selected": "normal_delivery",
+                            "conditions": [
+                                {
+                                    "value": "",
+                                    "cover_name": "pre-post-natal-expenses-on-ipd",
+                                    "option_name": "covered"
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "pre-post-natal-expenses-on-opd",
+                                    "option_name": "covered"
+                                },
+                                {
+                                    "value": "Applicable",
+                                    "is_hidden": 0,
+                                    "cover_name": "nine-months-waiting-period",
+                                    "option_name": "applicable"
+                                }
+                            ],
+                            "normal_delivery": {
+                                "type": "",
+                                "value": null
+                            },
+                            "cesarian_section": {
+                                "type": "",
+                                "value": null
+                            }
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not covered",
+                            "comment": "",
+                            "conditions": [
+                                {
+                                    "value": "Not Covered",
+                                    "cover_name": "pre-post-natal-expenses-on-ipd",
+                                    "option_name": "not_covered"
+                                },
+                                {
+                                    "value": "Not Covered",
+                                    "cover_name": "pre-post-natal-expenses-on-opd",
+                                    "option_name": "not_covered"
+                                },
+                                {
+                                    "value": "Not Applicable",
+                                    "is_hidden": 1,
+                                    "cover_name": "nine-months-waiting-period",
+                                    "option_name": "not_applicable"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": "",
+                            "conditions": [
+                                {
+                                    "value": "",
+                                    "cover_name": "pre-post-natal-expenses-on-ipd",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "cover_name": "pre-post-natal-expenses-on-opd",
+                                    "option_name": ""
+                                },
+                                {
+                                    "value": "",
+                                    "is_hidden": 0,
+                                    "cover_name": "nine-months-waiting-period",
+                                    "option_name": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "position": 13,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not covered"
+                },
+                {
+                    "name": "nine-months-waiting-period",
+                    "title": "9 Months Waiting Period",
+                    "value": "not_applicable",
+                    "options": [
+                        {
+                            "name": "applicable",
+                            "title": "Applicable",
+                            "value": "Applicable",
+                            "content": ""
+                        },
+                        {
+                            "name": "not_applicable",
+                            "title": "Not Applicable",
+                            "value": "Not Applicable"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 14,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Applicable"
+                },
+                {
+                    "name": "pre-post-natal-expenses-on-opd",
+                    "title": "Pre Post Natal Expenses On OPD",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "",
+                            "amount": 0,
+                            "comment": "",
+                            "selected_value": ""
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 15,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "pre-post-natal-expenses-on-ipd",
+                    "title": "Pre Post Natal Expenses On IPD",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "type": "",
+                            "title": "Covered",
+                            "value": "",
+                            "amount": 0,
+                            "comment": "",
+                            "selected_value": ""
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 16,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "ayush-benefit",
+                    "title": "Ayush Benefit",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "type": "",
+                            "title": "Covered",
+                            "value": "",
+                            "comment": "",
+                            "selected_value": null
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered",
+                            "comment": ""
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 17,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "new-born-baby-coverage",
+                    "title": "New Born Baby Coverage",
+                    "value": "covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "Covered from day 1 within family floater",
+                            "comment": "",
+                            "selected_value": "Covered from day 1 within family floater"
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 18,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "(Covered from day 1 within family floater)"
+                },
+                {
+                    "name": "day-care-procedures",
+                    "title": "Day Care Procedures",
+                    "value": "covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "Day care procedures Covered up to Individual sum insured"
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 20,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Day care procedures Covered up to Individual sum insured"
+                },
+                {
+                    "name": "pre-and-post-hospitalization",
+                    "title": "Pre & Post Hospitalization",
+                    "value": "30/60",
+                    "options": [
+                        {
+                            "name": "30/60",
+                            "title": "30/60",
+                            "value": "Pre Hospitalization is covered upto 30 days and Post Hospitalization is covered upto 60 days."
+                        },
+                        {
+                            "name": "60/90",
+                            "title": "60/90",
+                            "value": "Pre Hospitalization is covered upto 60 days and Post Hospitalization is covered upto 90 days."
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 21,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Pre Hospitalization is covered upto 30 days and Post Hospitalization is covered upto 60 days."
+                },
+                {
+                    "name": "road-ambulance-charges",
+                    "title": "Road Ambulance Charges",
+                    "value": "covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "type": "",
+                            "title": "Covered",
+                            "value": "Ambulance Charges Covered upto Rs. 1,500",
+                            "comment": "",
+                            "selected_value": 1500
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered",
+                            "comment": ""
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 24,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "sub-limit-on-cataract",
+                    "title": "Sub Limit On Cataract",
+                    "value": "not_applicable",
+                    "options": [
+                        {
+                            "name": "applicable",
+                            "title": "Applicable",
+                            "value": "",
+                            "comment": "",
+                            "limit_per_eye": ""
+                        },
+                        {
+                            "name": "not_applicable",
+                            "title": "Not Applicable",
+                            "value": "Not Applicable"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 29,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Applicable"
+                },
+                {
+                    "name": "co-payment",
+                    "title": "Co-Payment",
+                    "value": "not_applicable",
+                    "options": [
+                        {
+                            "name": "applicable",
+                            "title": "Applicable",
+                            "value": "",
+                            "comment": "",
+                            "on_all_lives": "",
+                            "co_percentage": "",
+                            "relation_wise": "",
+                            "family_definition": "esc",
+                            "applicable_on_ailments": "",
+                            "excluding_capped_elements": ""
+                        },
+                        {
+                            "name": "not_applicable",
+                            "title": "Not Applicable",
+                            "value": "Not Applicable",
+                            "comment": ""
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 30,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Applicable"
+                },
+                {
+                    "name": "lasik-surgery",
+                    "title": "Lasik Surgery",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "type": "static",
+                            "title": "Covered",
+                            "value": "Covered if the Power of the Eye is +/- 7.5",
+                            "number": "",
+                            "comment": "",
+                            "selected_value": "+/- 7.5"
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered",
+                            "comment": ""
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 32,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "dental-treatment-on-IPD-basis",
+                    "title": "Dental Treatment On IPD Basis",
+                    "value": "covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "Covered if due to accident on IPD basis",
+                            "content": null
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 33,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Covered if due to accident on IPD basis"
+                },
+                {
+                    "name": "mid-term-revision-of-si-due-to-promotion",
+                    "title": "Mid-Term Revision Of SI Due To Promotion",
+                    "value": "allowed",
+                    "options": [
+                        {
+                            "name": "allowed",
+                            "title": "Allowed",
+                            "value": "Mid Term revision in sum insured is allowed only in case of promotion by paying additional premium",
+                            "content": null
+                        },
+                        {
+                            "name": "not_allowed",
+                            "title": "Not Allowed",
+                            "value": "Not Allowed"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 34,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Mid Term revision in sum insured is allowed only in case of promotion by paying additional premium"
+                },
+                {
+                    "name": "gipsa-ppn-clause-applicable",
+                    "title": "GIPSA PPN Clause Applicable",
+                    "value": "not_applicable",
+                    "options": [
+                        {
+                            "name": "applicable",
+                            "title": "Applicable",
+                            "value": "Applicable",
+                            "content": null
+                        },
+                        {
+                            "name": "not_applicable",
+                            "title": "Not Applicable",
+                            "value": "Not Applicable"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 35,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Applicable"
+                },
+                {
+                    "name": "modern-treatments",
+                    "title": "Modern Treatments",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "",
+                            "comment": "",
+                            "options": [
+                                {
+                                    "name": "uterine_artery_embolization_and_hifu",
+                                    "title": "Uterine artery Embolization and HIFU",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "balloon_sinuplasty",
+                                    "title": "Balloon Sinuplasty",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "deep_brain_stimulation",
+                                    "title": "Deep Brain Stimulation",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "intra_vitreal_injections",
+                                    "title": "Intra Vitreal injections",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "robotic_surgeries ",
+                                    "title": "Robotic surgeries",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "stereotactic_radio_surgeries",
+                                    "title": "Stereotactic radio surgeries",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "bronchical_thermoplasty",
+                                    "title": "Bronchical Thermoplasty",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "intra_operative_neuro_monitoring",
+                                    "title": "IONM-(Intra Operative Neuro Monitoring)",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "vaporisation_of_the_prostate ",
+                                    "title": "Vaporisation of the prostate (Green laser treatment or holmium laser treatment)",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "immunotherapy_monoclonal_Antibody_to_be_given_as_injection ",
+                                    "title": "Immunotherapy-Monoclonal Antibody to be given as injection",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "stem_cell_therapy",
+                                    "title": "Stem cell therapy: Hematopoietic stem cells for bone marrow transplant for haematological conditions",
+                                    "value": ""
+                                }
+                            ],
+                            "selected": "",
+                            "covered_options": [
+                                {
+                                    "name": "upto_sum_insured",
+                                    "title": "Upto Sum Insured",
+                                    "value": "Upto sum insured"
+                                },
+                                {
+                                    "name": "upto_50_percent_sum_insured",
+                                    "title": "Upto 50% of Sum Insured",
+                                    "value": "Upto 50% of Sum Insured"
+                                },
+                                {
+                                    "name": "with_50_percent_co_payment",
+                                    "title": "With 50% Co-Payment",
+                                    "value": "With 50% Co-Payment"
+                                },
+                                {
+                                    "name": "as_per_expiring_insurer",
+                                    "title": "As per Expiring Insurer",
+                                    "value": "As per expiring insurer"
+                                },
+                                {
+                                    "name": "specify",
+                                    "title": "Specify",
+                                    "value": ""
+                                },
+                                {
+                                    "name": "show_only_treatment",
+                                    "title": "Show Only Treatment",
+                                    "value": "Show only treatment"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 36,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "cashless-facility",
+                    "title": "Cashless Facility",
+                    "value": "not_available",
+                    "options": [
+                        {
+                            "name": "available",
+                            "title": "Available",
+                            "value": "Available",
+                            "content": null
+                        },
+                        {
+                            "name": "not_available",
+                            "title": "Not Available",
+                            "value": "Not Available"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 37,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Available"
+                },
+                {
+                    "name": "terrorism-cover",
+                    "title": "Terrorism Cover",
+                    "value": "not_covered",
+                    "options": [
+                        {
+                            "name": "covered",
+                            "title": "Covered",
+                            "value": "Covered",
+                            "content": null
+                        },
+                        {
+                            "name": "not_covered",
+                            "title": "Not Covered",
+                            "value": "Not Covered"
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 38,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Not Covered"
+                },
+                {
+                    "name": "mid-term-addition-of-dependents",
+                    "title": "Mid-Term Addition Of Dependents",
+                    "value": "not_allowed",
+                    "options": [
+                        {
+                            "name": "allowed",
+                            "title": "Allowed",
+                            "value": "Allowed",
+                            "content": ""
+                        },
+                        {
+                            "name": "not_allowed",
+                            "title": "Not Allowed",
+                            "value": "Mid term addition of dependent are not allowed."
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 40,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Mid term addition of dependent are not allowed."
+                },
+                {
+                    "name": "premium-on-addition-deletion",
+                    "title": "Premium On Addition-Deletion",
+                    "value": "not_applicable",
+                    "options": [
+                        {
+                            "name": "applicable",
+                            "title": "Applicable",
+                            "value": "",
+                            "prorata_basis": "",
+                            "one_year_premium": ""
+                        },
+                        {
+                            "name": "not_applicable",
+                            "title": "Not Applicable",
+                            "value": "Rates on per family basis",
+                            "comment": "",
+                            "rates_as_per_family": 1
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 41,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Rates on per family basis"
+                },
+                {
+                    "name": "claim-submission",
+                    "title": "Claim Submission",
+                    "value": "not_applicable",
+                    "options": [
+                        {
+                            "name": "applicable",
+                            "type": "",
+                            "title": "Applicable",
+                            "value": "",
+                            "selected_value": null
+                        },
+                        {
+                            "name": "not_applicable",
+                            "title": "Not Applicable",
+                            "value": "Claims submission  period not applicable."
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 42,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Claims submission  period not applicable."
+                },
+                {
+                    "name": "claim-intimation",
+                    "title": "Claim Intimation",
+                    "value": "not_applicable",
+                    "options": [
+                        {
+                            "name": "applicable",
+                            "type": "",
+                            "title": "Applicable",
+                            "value": "",
+                            "selected_value": null
+                        },
+                        {
+                            "name": "not_applicable",
+                            "title": "Not Applicable",
+                            "value": "Claim intimation not required."
+                        },
+                        {
+                            "name": "specify",
+                            "title": "Specify",
+                            "value": ""
+                        }
+                    ],
+                    "position": 43,
+                    "is_optional": false,
+                    "is_difference": false,
+                    "selected_text": "Claim intimation not required."
+                }
+            ],
+            "lead_id": 651,
+            "version": 1,
+            "base_version": null,
+            "role_context": "sales",
+            "proposal_position": 1
+        }
+    ],
+    "product_information": {
+        "id": "859",
+        "type_of_policy": "rollover",
+        "employer_employee_relationship": true,
+        "policy_duration": "one-year",
+        "member_profile": "",
+        "expiring_policy_start_date": "2025-03-13",
+        "expiring_policy_end_date": "2026-03-12",
+        "expiring_insurer_branch_code": "1000",
+        "policy_number": "1234",
+        "lead_id": 651,
+        "existing_insurers": [
+            {
+                "id": 1236,
+                "insurance_company_id": 14,
+                "premium_share": "100.00",
+                "co_insurer_type": "leader",
+                "name": "HDFC ERGO General Insurance Co.Ltd."
+            }
+        ],
+        "existing_brokers": [
+            {
+                "id": 1005,
+                "broker_id": 198,
+                "premium_share": "100.00",
+                "broker_type": "leader",
+                "name": "India Insure Risk Management and Insurance Broking Services Pvt Ltd"
+            }
+        ],
+        "brokers_in_competition": [
+            {
+                "id": 191,
+                "name": "India Insure Risk Management and Insurance Broking Services Pvt Ltd"
+            },
+            {
+                "id": 199,
+                "name": "India Insure Risk Management and Insurance Broking Services Pvt Ltd"
+            }
+        ],
+        "sub_product": {
+            "id": 1,
+            "name": "Base Policy",
+            "description": "Base Policy"
+        },
+        "product": {
+            "id": 1,
+            "name": "Group Mediclaim",
+            "description": "This is a detailed description of Product A",
+            "line_of_business": "Employee Benefit - Non Life",
+            "short_code": "GMC"
+        }
+    },
+    "expiring_premium": {
+        "id": 651,
+        "premium_paid_at_inception": "10.00000",
+        "premium_paid_for_addition": "30.00000",
+        "premium_refund_on_deletion": "20.00000",
+        "total_premium_paid": "20.00000",
+        "premium_breakdown": true,
+        "has_installments": true,
+        "lead_id": 651,
+        "created_at": "2025-03-19T04:37:24.323Z",
+        "updated_at": "2025-03-19T04:37:24.323Z",
+        "version": 1,
+        "base_version": null,
+        "is_latest": true,
+        "role_context": "sales",
+        "installments": [
+            {
+                "id": 1229,
+                "installment_type": "Inception Premium (Installment 1)",
+                "payable_on_or_before": "2025-03-10",
+                "installment_percentage": "40.00",
+                "net_premium": "8.00000",
+                "premium_including_taxes": "9.44000",
+                "expiring_premium_id": 651,
+                "created_at": "2025-03-19T04:37:24.323Z",
+                "updated_at": "2025-03-19T04:37:24.323Z"
+            },
+            {
+                "id": 1230,
+                "installment_type": "Installment 2",
+                "payable_on_or_before": "2025-03-30",
+                "installment_percentage": "60.00",
+                "net_premium": "12.00000",
+                "premium_including_taxes": "14.16000",
+                "expiring_premium_id": 651,
+                "created_at": "2025-03-19T04:37:24.323Z",
+                "updated_at": "2025-03-19T04:37:24.323Z"
+            }
+        ]
+    },
+    "lives_information": {
+        "id": 763,
+        "is_breakup_at_inception": true,
+        "employees_at_inception": 100,
+        "dependents_at_inception": 50,
+        "total_lives_at_inception": 150,
+        "is_breakup_at_expiry": true,
+        "employees_at_expiry": 0,
+        "dependents_at_expiry": 0,
+        "total_lives_at_expiry": 0,
+        "is_breakup_at_renewal": false,
+        "employees_at_renewal": 100,
+        "dependents_at_renewal": 50,
+        "total_lives_at_renewal": 150,
+        "is_relation_wise_lives": false,
+        "family_definition": null,
+        "include_spouse": false,
+        "include_children": false,
+        "include_parents": false,
+        "include_in_laws": false,
+        "include_siblings": false,
+        "include_others": false,
+        "number_of_employees": 0,
+        "number_of_spouses": 0,
+        "number_of_children": 0,
+        "number_of_parents": 0,
+        "number_of_parents_in_laws": 0,
+        "number_of_siblings": 0,
+        "number_of_others": 0,
+        "lead_id": 651,
+        "created_at": "2025-02-14T10:02:50.491Z",
+        "updated_at": "2025-02-14T10:02:50.491Z",
+        "version": 1,
+        "base_version": null,
+        "is_latest": true,
+        "role_context": "sales"
+    },
+    "claims_information": [
+        {
+            "id": 4739,
+            "year": 2025,
+            "policy_start_date": "2024-03-18",
+            "policy_end_date": "2025-03-19",
+            "tpa_id": 1,
+            "paid_amount": "20000.00000",
+            "outstanding_amount": "10000.00000",
+            "total_incurred": "30000.00000",
+            "claim_as_on_date": "2025-03-19",
+            "annualized_outgo": "29836.51000",
+            "claim_ratio": "150.00000",
+            "life_adjusted_outgo": "0.00000",
+            "remarks": "NA",
+            "is_nil_claims": false,
+            "lead_id": 651,
+            "created_at": "2025-03-19T05:36:19.274Z",
+            "updated_at": "2025-03-19T05:36:19.274Z",
+            "version": 1,
+            "base_version": null,
+            "is_latest": true,
+            "role_context": "sales",
+            "tpa": {
+                "id": 1,
+                "name": "Medvantage Insurance TPA Private Limited (formerly known as United Health Care Parekh Insurance TPA Private Limited)",
+                "irda_registration_no": "MEDI",
+                "created_by": "system",
+                "updated_by": "system",
+                "is_active": true,
+                "created_at": "2024-10-30T07:52:47.665Z",
+                "updated_at": "2024-10-30T07:52:47.665Z"
+            },
+            "policyRunDays": 366
+        }
     ]
 }

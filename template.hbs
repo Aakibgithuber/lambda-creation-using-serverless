@@ -25,20 +25,23 @@
     </div>
 
     <!-- Client Information -->
-    <section class="info-section">
-        <h2>Client Information</h2>
-        <div class="info-box">
-            <div>
-                <p>Client Name</p>
-                <h3>{{name}}</h3>
-                <p>Client ID: 12932432</p>
-            </div>
-            <div>
-                <p>City / State</p>
-                <h3>Mumbai, Maharashtra, India</h3>
-            </div>
+    <!-- Client Information -->
+<section class="info-section">
+    <h2>Client Information</h2>
+    <div class="info-box">
+        <div>
+            <p>Client Name</p>
+            <h3>{{contact_information.0.full_name}}</h3>
+            <p>Client ID: {{contact_information.0.id}}</p>
         </div>
-    </section>
+        <div>
+            <p>City / State / Country</p>
+            <h3>{{corporate_information.address.city}},
+                {{corporate_information.address.states}},
+                {{corporate_information.address.country}}</h3>
+        </div>
+    </div>
+</section>
 
     <!-- Product Information -->
     <section class="product-info">
@@ -46,29 +49,28 @@
     <div class="info-container">
       <div class="info-item">
         <p>Insurance Product</p>
-        <h3>Group Mediclaim</h3>
+        <h3>{{product_information.product.name}}</h3>
       </div>
       <div class="info-item">
         <p>Sub Product</p>
-        <h3>Base Policy</h3>
+        <h3>{{product_information.sub_product.name}}</h3>
       </div>
       <div class="info-item">
         <p>Type of Policy</p>
-        <h3>Rollover</h3>
+        <h3>{{product_information.type_of_policy}}</h3>
       </div>
       <div class="info-item">
         <p>Expiring Policy Period</p>
-        <h3>25 / 09 / 2023 to 24 / 09 / 2024</h3>
-        <p class="duration">(2 years 4 months)</p>
+        <h3>{{product_information.expiring_policy_start_date}} to {{product_information.expiring_policy_end_date}}</h3>
+        <p class="duration">({{product_information.policy_duration}})</p>
       </div>
       <div class="info-item">
         <p>Name of Existing Insurer</p>
-        <h3>ICICI General Insurance</h3>
-        <h3>HDFC General Insurance</h3>
+        <h3>{{product_information.existing_insurers.0.name}}</h3>
       </div>
       <div class="info-item">
         <p>Employee Employer Relationship</p>
-        <h3>No</h3>
+        <h3>{{product_information.employer_employee_relationship}}</h3>
       </div>
     </div>
   </section>
@@ -89,27 +91,27 @@
                 </tr>
                 <tr>
                     <td><b>At Inception</b></td>
-                    <td>3000</td>
+                    <td>{{lives_information.employees_at_inception}}</td>
                     <td>+</td>
-                    <td>1000</td>
+                    <td>{{lives_information.dependents_at_inception}}</td>
                     <td>=</td>
-                    <td>4000</td>
+                    <td>{{lives_information.total_lives_at_inception}}</td>
                 </tr>
                 <tr>
                     <td><b>At Expiry</b></td>
-                    <td>-</td>
-                    <td></td>
-                    <td>-</td>
-                    <td></td>
-                    <td>4000</td>
+                    <td>{{lives_information.employees_at_expiry}}</td>
+                    <td>+</td>
+                    <td>{{lives_information.dependents_at_expiry}}</td>
+                    <td>=</td>
+                    <td>{{lives_information.total_lives_at_expiry}}</td>
                 </tr>
                 <tr>
                     <td><b>At Renewal</b></td>
-                    <td>3000</td>
+                    <td>{{lives_information.employees_at_renewal}}</td>
                     <td>+</td>
-                    <td>1000</td>
+                    <td>{{lives_information.dependents_at_renewal}}</td>
                     <td>=</td>
-                    <td>4000</td>
+                    <td>{{lives_information.total_lives_at_renewal}}</td>
                 </tr>
             </table>
         </div>
@@ -119,10 +121,13 @@
     <section class="info-section">
         <h2>Expiring Premium</h2>
         <div class="info-box">
-            <p><b>Premium Paid at Inception</b>: 20,000</p>
-            <p><b>Premium Paid for Addition</b>: 50,000</p>
-            <p><b>Premium Refund on Detection</b>: -10,000</p>
-            <p><b>Total Premium Paid</b>: 60,000</p>
+            <p><b>Premium Paid at Inception</b>: {{expiring_premium.premium_paid_at_inception}}</p>
+            <p>+</p>
+            <p><b>Premium Paid for Addition</b>: {{expiring_premium.premium_paid_for_addition}}</p>
+            <p>-</p>
+            <p><b>Premium Refund on Detection</b>: {{expiring_premium.premium_refund_on_deletion}}</p>
+            <p>=</p>
+            <p><b>Total Premium Paid</b>: {{expiring_premium.total_premium_paid}} </p>
         </div>
         <div class="table-box">
             <table>
@@ -135,20 +140,20 @@
                     <th>Including Taxes</th>
                 </tr>
                 <tr>
-                    <td>Inception Premium (Installment 1)</td>
-                    <td>2024/07/31</td>
-                    <td>50.50</td>
-                    <td>20,000</td>
-                    <td>20,000</td>
-                    <td>20,000</td>
+                    <td>{{expiring_premium.installments.0.installment_type}}</td>
+                    <td>{{expiring_premium.installments.0.payable_on_or_before}}</td>
+                    <td>{{expiring_premium.installments.0.installment_percentage}}</td>
+                    <td>{{expiring_premium.installments.0.net_premium}}</td>
+                    <td>{{expiring_premium.installments}}</td>
+                    <td>{{expiring_premium.installments.0.premium_including_taxes}}</td>
                 </tr>
                 <tr>
-                    <td>Installment 2</td>
-                    <td>2024/07/31</td>
-                    <td>50.50</td>
-                    <td>20,000</td>
-                    <td>20,000</td>
-                    <td>20,000</td>
+                    <td>{{expiring_premium.installments.1.installment_type}}</td>
+                    <td>{{expiring_premium.installments.1.payable_on_or_before}}</td>
+                    <td>{{expiring_premium.installments.1.installment_percentage}}</td>
+                    <td>{{expiring_premium.installments.1.net_premium}}</td>
+                    <td>{{expiring_premium.installments}}</td>
+                    <td>{{expiring_premium.installments.1.premium_including_taxes}}</td>
                 </tr>
                 <tr>
                     <td><b>Total</b></td>
@@ -179,26 +184,15 @@
         </thead>
         <tbody>
             <tr>
-                <td>2024</td>
-                <td>Health India</td>
-                <td>1,00,000,000.000</td>
-                <td>20,000</td>
-                <td>20,000</td>
-                <td>25/01/2023 (344 days)</td>
-                <td>20,000</td>
-                <td>2,92,000 (133%)</td>
-                <td>Remarks content goes here</td>
-            </tr>
-            <tr>
-                <td>2023</td>
-                <td>Health India</td>
-                <td>1,00,000,000.000</td>
-                <td>20,000</td>
-                <td>20,000</td>
-                <td>25/01/2023 (344 days)</td>
-                <td>20,000</td>
-                <td>2,92,000 (133%)</td>
-                <td>Remarks content goes here</td>
+                <td>{{claims_information.0.year}}</td>
+                <td>{{claims_information.0.tpa.name}}</td>
+                <td>{{claims_information.0.paid_amount}}</td>
+                <td>{{claims_information.0.outstanding_amount}}</td>
+                <td>{{claims_information.0.total_incurred}}</td>
+                <td>{{claims_information.0.claim_as_on_date}}</td>
+                <td>{{claims_information.0.annualized_outgo}}</td>
+                <td>{{claims_information.0.life_adjusted_outgo}}</td>
+                <td>{{claims_information.0.remarks}}</td>
             </tr>
         </tbody>
     </table>
@@ -223,13 +217,13 @@
             <tbody>
                 <tr>
                     <td>Family Definition</td>
-                    <td>ESC</td>
-                    <td>ESC ✅</td>
+                    <td>{{coverages.0.coverages.0.options.0.name}}</td>
+                    <td>{{coverages.0.coverages.0.options.1.name}}</td>
                 </tr>
                 <tr>
                     <td>Family Size</td>
-                    <td>1+3</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.0.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.0.options.1.value}}</td>
                 </tr>
                 <tr>
                     <td>Type of Cover</td>
@@ -238,53 +232,48 @@
                 </tr>
                 <tr>
                     <td>Sum Insured Per Family</td>
-                    <td>Rs.3,00,000</td>
-                    <td>Rs.3,00,000 & 15,00,000</td>
+                    <td>{{coverages.0.coverages.2.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.2.options.1.value}}</td>
                 </tr>
                 <tr>
                     <td>Domiciliary Hospitalisation</td>
-                    <td>Covered upto 30% of SI</td>
-                    <td>Covered upto 30% of SI ✅</td>
+                    <td>{{coverages.0.coverages.4.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.4.options.1.value}}</td>
                 </tr>
                 <tr>
                     <td>Pre-existing disease exclusion</td>
-                    <td>Waived Off</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.6.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.6.options.1.value}}</td>
                 </tr>
                 <tr>
                     <td>First 30 days waiting period</td>
-                    <td>Waived Off</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.5.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.5.options.1.value}}</td>
                 </tr>
                 <tr>
                     <td>1 / 2 / 4 year exclusion</td>
-                    <td>Waived Off</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.7.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.7.options.1.value}}</td>
                 </tr>
                 <tr>
                     <td>Maternity Benefit</td>
-                    <td>
-                        Covered for Rs.35,000/- For normal delivery and Rs.35,000/- For C-Section. <br> 
-                        Maternity covered for only first 2 children. Maternity covered for Self & spouse.
-                    </td>
-                    <td>
-                        Normal Delivery 40,000 & C Section: Rs. 50,000 ✅
-                    </td>
+                    <td>{{coverages.0.coverages.9.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.9.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Maternity 9 months waiting period</td>
-                    <td>Waived Off</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.10.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.10.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Pre-Post Natal Expenses</td>
-                    <td>Covered upto Rs.10,000/-or SI whichever is lower</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.11.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.11.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>New Born Baby Coverage</td>
-                    <td>Covered from Day One within the Family Floater Sum Insured</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.14.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.14.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Corporate Buffer - Annual Amount</td>
@@ -298,20 +287,18 @@
                 </tr>
                 <tr>
                     <td>Pre & Post Hospitalisation Expenses (30-60 Days)</td>
-                    <td>Covered</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.16.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.16.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Daily Room Rent Restriction</td>
-                    <td>
-                        2% of the Sum Insured and ICU- 4% of the Sum Insured. If the Insured Person is admitted in a room where the Room Rent incurred is higher, then the Insured Person shall bear the rateable proportion of the total associated Medical Expenses.
-                    </td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.8.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.8.options.1.value}}</td>
                 </tr>
                 <tr>
                     <td>Ambulance Charges</td>
-                    <td>Covered</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.17.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.17.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Sub Limit of ailments</td>
@@ -326,38 +313,38 @@
                 </tr>
                 <tr>
                     <td>Co-Payment</td>
-                    <td>N/A</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.19.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.19.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>AYUSH Treatment</td>
-                    <td>Covered Upto 50% Of SI</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.13.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.13.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Dental Treatment</td>
-                    <td>Covered if due to accident and requiring Hospitalisation</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.21.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.21.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Cashless Facility</td>
-                    <td>Yes</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.25.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.25.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Mid-term Addition of Dependents</td>
-                    <td>Newly Wedded Spouse and New Born Babies</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.27.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.27.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Claim Intimation</td>
-                    <td>As per expiring</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.30.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.30.options.1.value}} </td>
                 </tr>
                 <tr>
                     <td>Claim Submission</td>
-                    <td>As per expiring</td>
-                    <td>✅</td>
+                    <td>{{coverages.0.coverages.29.options.0.value}}</td>
+                    <td>{{coverages.0.coverages.29.options.1.value}} </td>
                 </tr>
             </tbody>
         </table>
@@ -381,11 +368,11 @@
     </thead>
     <tbody>
       <tr>
-        <td>Kumar Shetty</td>
-        <td>Pan Card</td>
-        <td class="document-number">ANKPP6763B</td>
-        <td class="file-name">Capternal_A_GVr01.jpeg</td>
-        <td>412 KB</td>
+        <td>{{documents}}</td>
+        <td>{{documents}}</td>
+        <td class="document-number">{{documents}}</td>
+        <td class="file-name">{{documents}}</td>
+        <td>{{documents}}</td>
       </tr>
     </tbody>
   </table>
