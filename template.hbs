@@ -1,18 +1,395 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>User Report</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome, {{name}}!</h1>
-    <p>Email: {{email}}</p>
-    <p>Age: {{age}}</p>
 
-    <h2>Orders</h2>
-    <ul>
-        {{#each orders}}
-            <li>Order ID: {{this.id}}, Amount: ${{this.amount}}</li>
-        {{/each}}
-    </ul>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Kaito Logo">
+        </div>
+        <div class="company-info">
+            <h1>Kaito Assurance Brokers Private Limited</h1>
+            <p>Chennai, Tamil Nadu</p>
+        </div>
+    </header>
+
+    <!-- Request Quote Button -->
+    <div class="quote-section">
+        <button class="quote-btn">Request for quote - GMC</button>
+    </div>
+
+    <!-- Client Information -->
+    <section class="info-section">
+        <h2>Client Information</h2>
+        <div class="info-box">
+            <div>
+                <p>Client Name</p>
+                <h3>{{name}}</h3>
+                <p>Client ID: 12932432</p>
+            </div>
+            <div>
+                <p>City / State</p>
+                <h3>Mumbai, Maharashtra, India</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Information -->
+    <section class="product-info">
+    <h2 class="section-title">Product Information</h2>
+    <div class="info-container">
+      <div class="info-item">
+        <p>Insurance Product</p>
+        <h3>Group Mediclaim</h3>
+      </div>
+      <div class="info-item">
+        <p>Sub Product</p>
+        <h3>Base Policy</h3>
+      </div>
+      <div class="info-item">
+        <p>Type of Policy</p>
+        <h3>Rollover</h3>
+      </div>
+      <div class="info-item">
+        <p>Expiring Policy Period</p>
+        <h3>25 / 09 / 2023 to 24 / 09 / 2024</h3>
+        <p class="duration">(2 years 4 months)</p>
+      </div>
+      <div class="info-item">
+        <p>Name of Existing Insurer</p>
+        <h3>ICICI General Insurance</h3>
+        <h3>HDFC General Insurance</h3>
+      </div>
+      <div class="info-item">
+        <p>Employee Employer Relationship</p>
+        <h3>No</h3>
+      </div>
+    </div>
+  </section>
+    
+
+    <!-- Lives Section -->
+    <section class="info-section">
+        <h2>Lives</h2>
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>Employee</th>
+                    <th></th>
+                    <th>Dependents</th>
+                    <th></th>
+                    <th>Total Lives</th>
+                </tr>
+                <tr>
+                    <td><b>At Inception</b></td>
+                    <td>3000</td>
+                    <td>+</td>
+                    <td>1000</td>
+                    <td>=</td>
+                    <td>4000</td>
+                </tr>
+                <tr>
+                    <td><b>At Expiry</b></td>
+                    <td>-</td>
+                    <td></td>
+                    <td>-</td>
+                    <td></td>
+                    <td>4000</td>
+                </tr>
+                <tr>
+                    <td><b>At Renewal</b></td>
+                    <td>3000</td>
+                    <td>+</td>
+                    <td>1000</td>
+                    <td>=</td>
+                    <td>4000</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Expiring Premium -->
+    <section class="info-section">
+        <h2>Expiring Premium</h2>
+        <div class="info-box">
+            <p><b>Premium Paid at Inception</b>: 20,000</p>
+            <p><b>Premium Paid for Addition</b>: 50,000</p>
+            <p><b>Premium Refund on Detection</b>: -10,000</p>
+            <p><b>Total Premium Paid</b>: 60,000</p>
+        </div>
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>Installment Type</th>
+                    <th>Payable Before</th>
+                    <th>Installment (%)</th>
+                    <th>Net Premium</th>
+                    <th>Premium (Rs.) Excl. Taxes</th>
+                    <th>Including Taxes</th>
+                </tr>
+                <tr>
+                    <td>Inception Premium (Installment 1)</td>
+                    <td>2024/07/31</td>
+                    <td>50.50</td>
+                    <td>20,000</td>
+                    <td>20,000</td>
+                    <td>20,000</td>
+                </tr>
+                <tr>
+                    <td>Installment 2</td>
+                    <td>2024/07/31</td>
+                    <td>50.50</td>
+                    <td>20,000</td>
+                    <td>20,000</td>
+                    <td>20,000</td>
+                </tr>
+                <tr>
+                    <td><b>Total</b></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>20,000</b></td>
+                    <td><b>20,000</b></td>
+                    <td><b>20,000</b></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <div class="claim-information">
+    <h3>Claim Information</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Name of TPA</th>
+                <th>Paid / Settlement Amount</th>
+                <th>Outstanding Amount</th>
+                <th>Total Incurred Amount</th>
+                <th>Claims on</th>
+                <th>Annualized Outgo</th>
+                <th>Life Adjusted Outgo</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2024</td>
+                <td>Health India</td>
+                <td>1,00,000,000.000</td>
+                <td>20,000</td>
+                <td>20,000</td>
+                <td>25/01/2023 (344 days)</td>
+                <td>20,000</td>
+                <td>2,92,000 (133%)</td>
+                <td>Remarks content goes here</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Health India</td>
+                <td>1,00,000,000.000</td>
+                <td>20,000</td>
+                <td>20,000</td>
+                <td>25/01/2023 (344 days)</td>
+                <td>20,000</td>
+                <td>2,92,000 (133%)</td>
+                <td>Remarks content goes here</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="coverages-section">
+    <h2 class="section-title">Coverages</h2>
+    <div class="options-container">
+        <button class="option-btn active">Option - 1</button>
+        <button class="option-btn">Option - 2</button>
+    </div>
+    
+    <div class="table-container">
+        <table class="coverages-table">
+            <thead>
+                <tr>
+                    <th>Covers</th>
+                    <th>Option - 1</th>
+                    <th>Option - 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Family Definition</td>
+                    <td>ESC</td>
+                    <td>ESC ✅</td>
+                </tr>
+                <tr>
+                    <td>Family Size</td>
+                    <td>1+3</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Type of Cover</td>
+                    <td>Floater</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Sum Insured Per Family</td>
+                    <td>Rs.3,00,000</td>
+                    <td>Rs.3,00,000 & 15,00,000</td>
+                </tr>
+                <tr>
+                    <td>Domiciliary Hospitalisation</td>
+                    <td>Covered upto 30% of SI</td>
+                    <td>Covered upto 30% of SI ✅</td>
+                </tr>
+                <tr>
+                    <td>Pre-existing disease exclusion</td>
+                    <td>Waived Off</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>First 30 days waiting period</td>
+                    <td>Waived Off</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>1 / 2 / 4 year exclusion</td>
+                    <td>Waived Off</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Maternity Benefit</td>
+                    <td>
+                        Covered for Rs.35,000/- For normal delivery and Rs.35,000/- For C-Section. <br> 
+                        Maternity covered for only first 2 children. Maternity covered for Self & spouse.
+                    </td>
+                    <td>
+                        Normal Delivery 40,000 & C Section: Rs. 50,000 ✅
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maternity 9 months waiting period</td>
+                    <td>Waived Off</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Pre-Post Natal Expenses</td>
+                    <td>Covered upto Rs.10,000/-or SI whichever is lower</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>New Born Baby Coverage</td>
+                    <td>Covered from Day One within the Family Floater Sum Insured</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Corporate Buffer - Annual Amount</td>
+                    <td>NA</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Corporate Buffer - Restrictions</td>
+                    <td>NA</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Pre & Post Hospitalisation Expenses (30-60 Days)</td>
+                    <td>Covered</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Daily Room Rent Restriction</td>
+                    <td>
+                        2% of the Sum Insured and ICU- 4% of the Sum Insured. If the Insured Person is admitted in a room where the Room Rent incurred is higher, then the Insured Person shall bear the rateable proportion of the total associated Medical Expenses.
+                    </td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Ambulance Charges</td>
+                    <td>Covered</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Sub Limit of ailments</td>
+                    <td>
+                        cataract: Rs. 20,000 | Surgery for Piles : 15,000 <br>
+                        Surgery for Renal Stone : Rs. 35,000 | FTCA : Rs. 1,40,000 <br>
+                        Hysterectomy : Rs. 25,000 | Prostate Surgery TURP : 30,000 <br>
+                        CABG : 1,75,000 | Removal Of Gall bladder : 25,000 <br>
+                        Appendectomy : 30,000 | Hip Replacement : 2,00,000
+                    </td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Co-Payment</td>
+                    <td>N/A</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>AYUSH Treatment</td>
+                    <td>Covered Upto 50% Of SI</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Dental Treatment</td>
+                    <td>Covered if due to accident and requiring Hospitalisation</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Cashless Facility</td>
+                    <td>Yes</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Mid-term Addition of Dependents</td>
+                    <td>Newly Wedded Spouse and New Born Babies</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Claim Intimation</td>
+                    <td>As per expiring</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Claim Submission</td>
+                    <td>As per expiring</td>
+                    <td>✅</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="documents-container">
+  <div class="documents-header">
+    <span>Documents</span>
+    <i class="edit-icon"></i>
+  </div>
+  <table class="documents-table">
+    <thead>
+      <tr>
+        <th>Insured Name</th>
+        <th>Document Name</th>
+        <th>Document Number</th>
+        <th>File Name</th>
+        <th>Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kumar Shetty</td>
+        <td>Pan Card</td>
+        <td class="document-number">ANKPP6763B</td>
+        <td class="file-name">Capternal_A_GVr01.jpeg</td>
+        <td>412 KB</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 </body>
 </html>

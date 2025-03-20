@@ -1,0 +1,369 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background: #f9fafb;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.company-info h1 {
+    color: #007bff;
+    font-size: 18px;
+}
+
+.company-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.actions button {
+    border: none;
+    padding: 6px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pdf-btn { background: red; color: white; }
+.excel-btn { background: green; color: white; }
+.close-btn { background: transparent; }
+
+/* Quote Section */
+.quote-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.quote-btn {
+    background: #eef4ff;
+    border: none;
+    padding: 8px 15px;
+    color: #007bff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button {
+    border: none;
+    padding: 6px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.rfq-btn.active { background: #007bff; color: white; }
+.preview-btn, .expand-btn { background: #eef4ff; color: #007bff; }
+
+/* Info Sections */
+.info-section {
+    background: white;
+    padding: 15px 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    color: #007bff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #f8f9fc;
+    border-radius: 5px;
+}
+
+.info-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+.info-box h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Table Styling */
+.table-box {
+    margin-top: 10px;
+    overflow-x: auto;
+}
+
+.table-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-box th, .table-box td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+th {
+    background: #eef4ff;
+    font-weight: bold;
+}
+
+td b {
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+}
+.claim-information {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.claim-information h3 {
+    color: #2F76F7;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.claim-information table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.claim-information thead tr {
+    background: #F2F6FF;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.claim-information th, 
+.claim-information td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.claim-information tbody tr {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.claim-information tbody tr:last-child {
+    border-bottom: none;
+}
+
+.claim-information td:nth-child(1),
+.claim-information td:nth-child(6),
+.claim-information td:nth-child(7),
+.claim-information td:nth-child(8) {
+    font-weight: 500;
+}
+
+.claim-information td:nth-child(9) {
+    color: #6B7280;
+    font-size: 13px;
+}
+.coverages-section {
+    padding: 20px;
+    background: #ffffff;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3D5AFE;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.option-btn {
+    background: #E3EFFF;
+    color: #3D5AFE;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.option-btn.active {
+    background: #3D5AFE;
+    color: white;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.coverages-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #F9FAFC;
+    border-radius: 10px;
+}
+
+.coverages-table th {
+    background: #E3EFFF;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.coverages-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.documents-container {
+    background: #f8fbff;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  
+  .documents-header {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #246BFD;
+  }
+  
+  .edit-icon {
+    background: url('edit-icon.svg') no-repeat center;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+  }
+  
+  .documents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .documents-table th {
+    background: #f0f6ff;
+    color: #246BFD;
+    font-weight: 600;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .documents-table td {
+    padding: 10px;
+    color: #4a4a4a;
+    font-weight: 500;
+  }
+  
+  .document-number,
+  .file-name {
+    color: #246BFD;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+/*product information */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+    margin: 40px;
+  }
+  
+  .product-info {
+    color: #007bff;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .section-title {
+    color: #007bff;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .info-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-item p {
+    margin: 0;
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .info-item h3 {
+    margin: 4px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #212529;
+  }
+  
+  .duration {
+    color: #6c757d;
+    font-size: 12px;
+  }
+  
+  @media (max-width: 1024px) {
+    .info-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .info-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
