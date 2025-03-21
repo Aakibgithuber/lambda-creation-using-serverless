@@ -24,3 +24,6 @@ functions:
           path: convert
           method: post
 
+package:
+  include:
+    - logo.png
