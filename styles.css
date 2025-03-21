@@ -13,71 +13,62 @@ body {
 }
 
 /* Header */
-header {
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background: white;
-    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 20px;
+    background-color: white;
 }
 
+/* Logo */
 .logo img {
-    height: 40px;
+    height: 50px;
+    margin-top: -60px
+}
+
+/* Company Info - Centered & Moved Up */
+.company-info {
+    flex-grow: 1;
+    text-align: center;
+    margin-top: -40px; 
 }
 
 .company-info h1 {
     color: #007bff;
-    font-size: 18px;
+    font-size: 22px; 
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .company-info p {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
+    margin: 0;
 }
-
-.actions button {
-    border: none;
-    padding: 6px 12px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.pdf-btn { background: red; color: white; }
-.excel-btn { background: green; color: white; }
-.close-btn { background: transparent; }
 
 /* Quote Section */
 .quote-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
     padding: 15px 20px;
 }
 
 .quote-btn {
     background: #eef4ff;
     border: none;
-    padding: 8px 15px;
+    padding: 6px 12px;  /* Reduce padding */
     color: #007bff;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    margin-top: -5px;  /* Adjust margin */
+    width: fit-content;  /* Make it fit the text */
+    display: inline-block;  /* Prevent full width */
 }
-
-.buttons button {
-    border: none;
-    padding: 6px 12px;
-    margin: 0 5px;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.rfq-btn.active { background: #007bff; color: white; }
-.preview-btn, .expand-btn { background: #eef4ff; color: #007bff; }
 
 /* Info Sections */
 .info-section {
@@ -202,9 +193,13 @@ footer {
     color: #6B7280;
     font-size: 13px;
 }
+
 .coverages-section {
-    padding: 20px;
-    background: #ffffff;
+    background: white;
+    padding: 15px 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .section-title {
@@ -213,29 +208,12 @@ footer {
     color: #3D5AFE;
 }
 
-.options-container {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-}
-
-.option-btn {
-    background: #E3EFFF;
-    color: #3D5AFE;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-    border-radius: 5px;
-}
-
-.option-btn.active {
-    background: #3D5AFE;
-    color: white;
-}
-
 .table-container {
-    overflow-x: auto;
+    background: white;
+    padding: 15px 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .coverages-table {
@@ -246,10 +224,11 @@ footer {
 }
 
 .coverages-table th {
-    background: #E3EFFF;
-    text-align: left;
-    padding: 10px;
-    font-weight: bold;
+    background: white;
+    padding: 15px 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .coverages-table td {
@@ -258,9 +237,11 @@ footer {
 }
 
 .documents-container {
-    background: #f8fbff;
-    border-radius: 10px;
-    padding: 15px;
+    background: white;
+    padding: 15px 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   .documents-header {
@@ -314,9 +295,11 @@ body {
   }
   
   .product-info {
-    color: #007bff;
-    font-size: 16px;
-    margin-bottom: 24px;
+    background: white;
+    padding: 15px 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   .section-title {

@@ -7,14 +7,14 @@ provider:
   memorySize: 1024
   timeout: 30
   environment:
-    AWS_BUCKET_NAME: "mario121bucket"
+    AWS_BUCKET_NAME: "mario121buckett"
     AWS_BUCKET_REGION: "ap-south-1"
 
   iamRoleStatements:
     - Effect: Allow
       Action:
         - s3:PutObject
-      Resource: "arn:aws:s3:::mario121bucket/*"
+      Resource: "arn:aws:s3:::mario121buckett/*"
 
 functions:
   convertHtmlToPdf:
