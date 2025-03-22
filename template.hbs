@@ -200,10 +200,6 @@
 
 <div class="coverages-section">
     <h2 class="section-title">Coverages</h2>
-    <!-- <div class="options-container">
-        <button class="option-btn active">Option - 1</button>
-        <button class="option-btn">Option - 2</button>
-    </div> -->
     
     <div class="table-container">
         <table class="coverages-table">
@@ -217,8 +213,24 @@
             <tbody>
                 <tr>
                     <td>Family Definition</td>
-                    <td>{{coverages.0.coverages.0.options.0.name}}</td>
-                    <td>{{coverages.0.coverages.0.options.1.name}}</td>
+                    <td id="option1-family">{{coverages.0.coverages.0.options.0.title}}</td>
+                    <td id="option2-family"></td>
+                </tr>
+                <script>
+                    function compareFamilyDefinition() {
+                        let option1Family = document.getElementById("option1-family").innerText;
+                        let option2Family = "{{coverages.0.coverages.0.options.1.title}}"; 
+                
+                        if (option1Family === option2Family) {
+                            document.getElementById("option2-family").innerHTML = "same";
+                        } else {
+                            document.getElementById("option2-family").innerText = option2Family;
+                        }
+                    }
+                
+                    // Function Call
+                    compareFamilyDefinition();
+                </script>
                 </tr>
                 <tr>
                     <td>Family Size</td>
