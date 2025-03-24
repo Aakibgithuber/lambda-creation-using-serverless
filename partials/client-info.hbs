@@ -1,0 +1,25 @@
+{{#if contact_information.0.full_name}}
+<section class="info-section">
+    <h2>Client Information</h2>
+    <div class="info-box">
+        <div>
+            <p>Client Name</p>
+            <h3>{{contact_information.0.full_name}}</h3>
+
+            {{#if contact_information.0.id}}
+            <p>Client ID: {{contact_information.0.id}}</p>
+            {{/if}}
+        </div>
+
+        {{#if corporate_information.address}}
+        <div>
+            <p>City / State / Country</p>
+            <h3>{{corporate_information.address.city}}, 
+                {{corporate_information.address.states}}, 
+                {{corporate_information.address.country}}</h3>
+        </div>
+        {{/if}}
+
+    </div>
+</section>
+{{/if}}

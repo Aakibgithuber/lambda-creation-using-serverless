@@ -1,0 +1,47 @@
+{{#if product_information.product.name}}
+<section class="product-info">
+    <h2 class="section-title">Product Information</h2>
+    <div class="info-container">
+        <div class="info-item">
+            <p>Insurance Product</p>
+            <h3>{{product_information.product.name}}</h3>
+        </div>
+
+        {{#if product_information.sub_product.name}}
+        <div class="info-item">
+            <p>Sub Product</p>
+            <h3>{{product_information.sub_product.name}}</h3>
+        </div>
+        {{/if}}
+
+        {{#if product_information.type_of_policy}}
+        <div class="info-item">
+            <p>Type of Policy</p>
+            <h3>{{product_information.type_of_policy}}</h3>
+        </div>
+        {{/if}}
+
+        {{#if product_information.expiring_policy_start_date}}
+        <div class="info-item">
+            <p>Expiring Policy Period</p>
+            <h3>{{product_information.expiring_policy_start_date}} to {{product_information.expiring_policy_end_date}}</h3>
+            <p class="duration">({{product_information.policy_duration}})</p>
+        </div>
+        {{/if}}
+
+        {{#if product_information.existing_insurers.0.name}}
+        <div class="info-item">
+            <p>Name of Existing Insurer</p>
+            <h3>{{product_information.existing_insurers.0.name}}</h3>
+        </div>
+        {{/if}}
+
+        {{#if product_information.employer_employee_relationship}}
+        <div class="info-item">
+            <p>Employee Employer Relationship</p>
+            <h3>{{product_information.employer_employee_relationship}}</h3>
+        </div>
+        {{/if}}
+    </div>
+</section>
+{{/if}}

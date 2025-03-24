@@ -10,27 +10,46 @@ module.exports.main = async (event) => {
   const s3Client = new S3Client({ region: process.env.AWS_BUCKET_REGION });
   const jsonData = JSON.parse(event.body || "{}");
 
+  // Paths for required files
   const templatePath = path.join(__dirname, "template.hbs");
   const cssPath = path.join(__dirname, "styles.css");
   const logoPath = path.join(__dirname, "logo.png");
   const tickPath = path.join(__dirname, "tick.png");
 
-  if (!fs.existsSync(templatePath) || !fs.existsSync(cssPath) || !fs.existsSync(logoPath) || !fs.existsSync(tickPath)) {
-    console.error("Template, CSS, Logo, or Tick file missing!");
-    return { statusCode: 500, body: "Required files missing in Lambda package." };
+  // Paths for all partials
+  const partials = {
+    "client-info": path.join(__dirname, "partials", "client-info.hbs"),
+    "product-info": path.join(__dirname, "partials", "product-info.hbs"),
+    "expiring-premium": path.join(__dirname, "partials", "expiring-premium.hbs"),
+    "lives-info": path.join(__dirname, "partials", "lives-info.hbs"),
+    "claim-information": path.join(__dirname, "partials", "claim-information.hbs"),
+    "coverages": path.join(__dirname, "partials", "coverages.hbs"),
+    "documents": path.join(__dirname, "partials", "documents.hbs"),
+  };
+
+  // Ensure all required files exist
+  const requiredFiles = [templatePath, cssPath, logoPath, tickPath, ...Object.values(partials)];
+  for (const file of requiredFiles) {
+    if (!fs.existsSync(file)) {
+      console.error(`❌ Required file missing: ${file}`);
+      return { statusCode: 500, body: `Some required files are missing in Lambda package.` };
+    }
   }
 
+  // ✅ Registering partials dynamically
+  for (const [name, filePath] of Object.entries(partials)) {
+    const source = fs.readFileSync(filePath, "utf8");
+    handlebars.registerPartial(name, source);
+  }
+
+  // Read main template
   const templateSource = fs.readFileSync(templatePath, "utf8");
   const cssContent = fs.readFileSync(cssPath, "utf8");
   const template = handlebars.compile(templateSource);
 
-  const imageBuffer = fs.readFileSync(logoPath);
-  const imageBase64 = imageBuffer.toString("base64");
-  const imageSrc = `data:image/png;base64,${imageBase64}`;
-
-  const tickBuffer = fs.readFileSync(tickPath);
-  const tickBase64 = tickBuffer.toString("base64");
-  const tickSrc = `data:image/png;base64,${tickBase64}`;
+  // Encode images in Base64
+  const imageSrc = `data:image/png;base64,${fs.readFileSync(logoPath).toString("base64")}`;
+  const tickSrc = `data:image/png;base64,${fs.readFileSync(tickPath).toString("base64")}`;
 
   const htmlContent = template({ ...jsonData, imageSrc, tickSrc });
 
@@ -102,4 +121,3 @@ module.exports.main = async (event) => {
     await browser.close();
   }
 };
-

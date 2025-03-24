@@ -1,0 +1,41 @@
+{{#if lives_information}}
+<section class="info-section">
+        <h2>Lives</h2>
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>Employee</th>
+                    <th></th>
+                    <th>Dependents</th>
+                    <th></th>
+                    <th>Total Lives</th>
+                </tr>
+                <tr>
+                    <td><b>At Inception</b></td>
+                    <td>{{lives_information.employees_at_inception}}</td>
+                    <td>+</td>
+                    <td>{{lives_information.dependents_at_inception}}</td>
+                    <td>=</td>
+                    <td>{{lives_information.total_lives_at_inception}}</td>
+                </tr>
+                <tr>
+                    <td><b>At Expiry</b></td>
+                    <td>{{lives_information.employees_at_expiry}}</td>
+                    <td>+</td>
+                    <td>{{lives_information.dependents_at_expiry}}</td>
+                    <td>=</td>
+                    <td>{{lives_information.total_lives_at_expiry}}</td>
+                </tr>
+                <tr>
+                    <td><b>At Renewal</b></td>
+                    <td>{{lives_information.employees_at_renewal}}</td>
+                    <td>+</td>
+                    <td>{{lives_information.dependents_at_renewal}}</td>
+                    <td>=</td>
+                    <td>{{lives_information.total_lives_at_renewal}}</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    {{/if}}

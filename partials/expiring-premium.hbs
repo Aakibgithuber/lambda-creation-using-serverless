@@ -1,0 +1,50 @@
+    {{#if expiring_premium}}
+    <section class="info-section">
+        <h2>Expiring Premium</h2>
+        <div class="info-box">
+            <p><b>Premium Paid at Inception</b>: {{expiring_premium.premium_paid_at_inception}}</p>
+            <p>+</p>
+            <p><b>Premium Paid for Addition</b>: {{expiring_premium.premium_paid_for_addition}}</p>
+            <p>-</p>
+            <p><b>Premium Refund on Detection</b>: {{expiring_premium.premium_refund_on_deletion}}</p>
+            <p>=</p>
+            <p><b>Total Premium Paid</b>: {{expiring_premium.total_premium_paid}} </p>
+        </div>
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>Installment Type</th>
+                    <th>Payable Before</th>
+                    <th>Installment (%)</th>
+                    <th>Net Premium</th>
+                    <th>Premium (Rs.) Excl. Taxes</th>
+                    <th>Including Taxes</th>
+                </tr>
+                <tr>
+                    <td>{{expiring_premium.installments.0.installment_type}}</td>
+                    <td>{{expiring_premium.installments.0.payable_on_or_before}}</td>
+                    <td>{{expiring_premium.installments.0.installment_percentage}}</td>
+                    <td>{{expiring_premium.installments.0.net_premium}}</td>
+                    <td>{{expiring_premium.installments}}</td>
+                    <td>{{expiring_premium.installments.0.premium_including_taxes}}</td>
+                </tr>
+                <tr>
+                    <td>{{expiring_premium.installments.1.installment_type}}</td>
+                    <td>{{expiring_premium.installments.1.payable_on_or_before}}</td>
+                    <td>{{expiring_premium.installments.1.installment_percentage}}</td>
+                    <td>{{expiring_premium.installments.1.net_premium}}</td>
+                    <td>{{expiring_premium.installments}}</td>
+                    <td>{{expiring_premium.installments.1.premium_including_taxes}}</td>
+                </tr>
+                <tr>
+                    <td><b>Total</b></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>20,000</b></td>
+                    <td><b>20,000</b></td>
+                    <td><b>20,000</b></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    {{/if}}

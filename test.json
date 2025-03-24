@@ -1,0 +1,12 @@
+{
+  "corporate_information": {
+    "address": {
+      "city": "Mumbai",
+      "states": "Maharashtra",
+      "country": "India"
+    }
+  },
+  "other_data": {
+    "some_key": "some_value"
+  }
+}

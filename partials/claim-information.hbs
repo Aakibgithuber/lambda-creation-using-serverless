@@ -1,0 +1,33 @@
+{{#if claims_information}}
+<div class="claim-information">
+    <h3>Claim Information</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Name of TPA</th>
+                <th>Paid / Settlement Amount</th>
+                <th>Outstanding Amount</th>
+                <th>Total Incurred Amount</th>
+                <th>Claims on</th>
+                <th>Annualized Outgo</th>
+                <th>Life Adjusted Outgo</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{claims_information.0.year}}</td>
+                <td>{{claims_information.0.tpa.name}}</td>
+                <td>{{claims_information.0.paid_amount}}</td>
+                <td>{{claims_information.0.outstanding_amount}}</td>
+                <td>{{claims_information.0.total_incurred}}</td>
+                <td>{{claims_information.0.claim_as_on_date}}</td>
+                <td>{{claims_information.0.annualized_outgo}}</td>
+                <td>{{claims_information.0.life_adjusted_outgo}}</td>
+                <td>{{claims_information.0.remarks}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{/if}}
