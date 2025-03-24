@@ -1,45 +1,37 @@
 const puppeteer = require("puppeteer-core");
 const chromium = require("@sparticuz/chromium");
-const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const { S3Client, PutObjectCommand, GetObjectCommand } = require("@aws-sdk/client-s3");
+const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 const fs = require("fs");
 const path = require("path");
 const handlebars = require("handlebars");
 
 module.exports.main = async (event) => {
-  // AWS S3 Client
   const s3Client = new S3Client({ region: process.env.AWS_BUCKET_REGION });
-
-  // Parse JSON Input
   const jsonData = JSON.parse(event.body || "{}");
 
-  // File Paths
   const templatePath = path.join(__dirname, "template.hbs");
   const cssPath = path.join(__dirname, "styles.css");
   const logoPath = path.join(__dirname, "logo.png");
-  const tickPath = path.join(__dirname, "tick.png"); // ✅ Tick Image Path
+  const tickPath = path.join(__dirname, "tick.png");
 
-  // Check File Existence
   if (!fs.existsSync(templatePath) || !fs.existsSync(cssPath) || !fs.existsSync(logoPath) || !fs.existsSync(tickPath)) {
     console.error("Template, CSS, Logo, or Tick file missing!");
     return { statusCode: 500, body: "Required files missing in Lambda package." };
   }
 
-  // Read & Compile Handlebars Template
   const templateSource = fs.readFileSync(templatePath, "utf8");
   const cssContent = fs.readFileSync(cssPath, "utf8");
   const template = handlebars.compile(templateSource);
 
-  // Encode Logo Image to Base64
   const imageBuffer = fs.readFileSync(logoPath);
   const imageBase64 = imageBuffer.toString("base64");
   const imageSrc = `data:image/png;base64,${imageBase64}`;
 
-  // Encode Tick Image to Base64
   const tickBuffer = fs.readFileSync(tickPath);
   const tickBase64 = tickBuffer.toString("base64");
   const tickSrc = `data:image/png;base64,${tickBase64}`;
 
-  // Generate Final HTML
   const htmlContent = template({ ...jsonData, imageSrc, tickSrc });
 
   const finalHtml = `
@@ -53,7 +45,6 @@ module.exports.main = async (event) => {
     </html>
   `;
 
-  // Start Puppeteer Browser
   const browser = await puppeteer.launch({
     args: [...chromium.args, "--no-sandbox", "--disable-setuid-sandbox"],
     defaultViewport: chromium.defaultViewport,
@@ -64,10 +55,8 @@ module.exports.main = async (event) => {
   const page = await browser.newPage();
 
   try {
-    // Load HTML into Puppeteer
     await page.setContent(finalHtml, { waitUntil: "load" });
 
-    // Convert to PDF
     const pdfBuffer = await page.pdf({
       format: "A4",
       printBackground: true,
@@ -76,7 +65,6 @@ module.exports.main = async (event) => {
       preferCSSPageSize: true
     });
 
-    // Upload to S3
     const bucketName = process.env.AWS_BUCKET_NAME;
     const pdfKey = `${jsonData.name}_${Date.now()}.pdf`;
 
@@ -89,9 +77,23 @@ module.exports.main = async (event) => {
 
     console.log("✅ PDF uploaded successfully:", pdfKey);
 
+    // Generate pre-signed URL (valid for 1 hour)
+    const signedUrl = await getSignedUrl(
+      s3Client,
+      new GetObjectCommand({
+        Bucket: bucketName,
+        Key: pdfKey,
+      }),
+      { expiresIn: 3600 }
+    );
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "PDF uploaded successfully!", file: pdfKey }),
+      body: JSON.stringify({
+        message: "PDF uploaded successfully!",
+        file: pdfKey,
+        downloadUrl: signedUrl, // User can use this URL to download
+      }),
     };
   } catch (error) {
     console.error("❌ Error generating PDF:", error);
@@ -100,3 +102,4 @@ module.exports.main = async (event) => {
     await browser.close();
   }
 };
+
