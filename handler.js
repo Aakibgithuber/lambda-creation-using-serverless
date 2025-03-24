@@ -16,10 +16,11 @@ module.exports.main = async (event) => {
   const templatePath = path.join(__dirname, "template.hbs");
   const cssPath = path.join(__dirname, "styles.css");
   const logoPath = path.join(__dirname, "logo.png");
+  const tickPath = path.join(__dirname, "tick.png"); // ✅ Tick Image Path
 
   // Check File Existence
-  if (!fs.existsSync(templatePath) || !fs.existsSync(cssPath) || !fs.existsSync(logoPath)) {
-    console.error("Template, CSS, or Logo file missing!");
+  if (!fs.existsSync(templatePath) || !fs.existsSync(cssPath) || !fs.existsSync(logoPath) || !fs.existsSync(tickPath)) {
+    console.error("Template, CSS, Logo, or Tick file missing!");
     return { statusCode: 500, body: "Required files missing in Lambda package." };
   }
 
@@ -28,13 +29,18 @@ module.exports.main = async (event) => {
   const cssContent = fs.readFileSync(cssPath, "utf8");
   const template = handlebars.compile(templateSource);
 
-  // Encode Image to Base64 (Safe for Lambda)
+  // Encode Logo Image to Base64
   const imageBuffer = fs.readFileSync(logoPath);
   const imageBase64 = imageBuffer.toString("base64");
   const imageSrc = `data:image/png;base64,${imageBase64}`;
 
+  // Encode Tick Image to Base64
+  const tickBuffer = fs.readFileSync(tickPath);
+  const tickBase64 = tickBuffer.toString("base64");
+  const tickSrc = `data:image/png;base64,${tickBase64}`;
+
   // Generate Final HTML
-  const htmlContent = template({ ...jsonData, imageSrc });
+  const htmlContent = template({ ...jsonData, imageSrc, tickSrc });
 
   const finalHtml = `
     <html>
@@ -64,9 +70,10 @@ module.exports.main = async (event) => {
     // Convert to PDF
     const pdfBuffer = await page.pdf({
       format: "A4",
-      printBackground: true,  // CSS Backgrounds Enable
-      margin: { top: "20px", right: "10px", bottom: "20px", left: "10px" }, // Proper Margins
-      preferCSSPageSize: true // CSS mein set page size prefer karega
+      printBackground: true,
+      margin: { top: "20px", right: "10px", bottom: "20px", left: "10px" },
+      scale: 0.9,
+      preferCSSPageSize: true
     });
 
     // Upload to S3

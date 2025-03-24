@@ -116,7 +116,7 @@
             </table>
         </div>
     </section>
-
+<div class="page-break"></div>
     <!-- Expiring Premium -->
     <section class="info-section">
         <h2>Expiring Premium</h2>
@@ -197,8 +197,7 @@
         </tbody>
     </table>
 </div>
-
-<div class="coverages-section">
+<section class="coverages-section">
     <h2 class="section-title">Coverages</h2>
 
     <div class="table-container">
@@ -239,7 +238,7 @@
             </tbody>
         </table>
     </div>
-</div>
+</section>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -251,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let option2 = option2Cell.getAttribute("data-option").trim();
 
         if (option1 === option2) {
-            option2Cell.innerHTML = "same";
+            option2Cell.innerHTML = `<img src="{{tickSrc}}" alt="✓" style="width: 16px; height: 16px;">`;
         } else {
             option2Cell.innerText = option2;
         }
