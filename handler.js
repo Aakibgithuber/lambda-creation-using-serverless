@@ -62,7 +62,12 @@ module.exports.main = async (event) => {
     await page.setContent(finalHtml, { waitUntil: "load" });
 
     // Convert to PDF
-    const pdfBuffer = await page.pdf({ format: "A4" });
+    const pdfBuffer = await page.pdf({
+      format: "A4",
+      printBackground: true,  // CSS Backgrounds Enable
+      margin: { top: "20px", right: "10px", bottom: "20px", left: "10px" }, // Proper Margins
+      preferCSSPageSize: true // CSS mein set page size prefer karega
+    });
 
     // Upload to S3
     const bucketName = process.env.AWS_BUCKET_NAME;
