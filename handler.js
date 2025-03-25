@@ -24,6 +24,7 @@ module.exports.main = async (event) => {
     "lives-info": path.join(__dirname, "partials", "lives-info.hbs"),
     "claim-information": path.join(__dirname, "partials", "claim-information.hbs"),
     "coverages": path.join(__dirname, "partials", "coverages.hbs"),
+    "premium": path.join(__dirname, "partials", "premium.hbs"),
     "documents": path.join(__dirname, "partials", "documents.hbs"),
   };
 
