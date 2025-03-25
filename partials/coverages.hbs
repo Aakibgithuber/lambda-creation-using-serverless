@@ -1,62 +1,72 @@
 {{#if coverages}}
 <section class="coverages-section">
-    <h2 class="section-title">Coverages</h2>
+  <h2 class="section-title">Coverages</h2>
 
-    <div class="table-container">
-        <table class="coverages-table">
-            <thead>
-                <tr>
-                    <th>Covers</th>
-                    <th>Option - 1</th>
-                    <th>Option - 2</th>
-                </tr>
-            </thead>
-            <tbody id="coverage-body">
-                <tr><td>Family Definition</td><td>{{coverages.0.coverages.0.options.0.title}}</td><td data-option="{{coverages.0.coverages.0.options.1.title}}"></td></tr>
-                <tr><td>Family Size</td><td>{{coverages.0.coverages.0.options.0.value}}</td><td data-option="{{coverages.0.coverages.0.options.1.value}}"></td></tr>
-                <tr><td>Type of Cover</td><td>{{coverages.0.coverages.1.options.0.value}}</td><td data-option="{{coverages.0.coverages.1.options.1.value}}"></td></tr>
-                <tr><td>Sum Insured Per Family</td><td>{{coverages.0.coverages.2.options.0.value}}</td><td data-option="{{coverages.0.coverages.2.options.1.value}}"></td></tr>
-                <tr><td>Domiciliary Hospitalisation</td><td>{{coverages.0.coverages.3.options.0.value}}</td><td data-option="{{coverages.0.coverages.3.options.1.value}}"></td></tr>
-                <tr><td>Pre-existing Disease Exclusion</td><td>{{coverages.0.coverages.4.options.0.value}}</td><td data-option="{{coverages.0.coverages.4.options.1.value}}"></td></tr>
-                <tr><td>First 30 Days Waiting Period</td><td>{{coverages.0.coverages.5.options.0.value}}</td><td data-option="{{coverages.0.coverages.5.options.1.value}}"></td></tr>
-                <tr><td>1 / 2 / 4 Year Exclusion</td><td>{{coverages.0.coverages.6.options.0.value}}</td><td data-option="{{coverages.0.coverages.6.options.1.value}}"></td></tr>
-                <tr><td>Maternity Benefit</td><td>{{coverages.0.coverages.7.options.0.value}}</td><td data-option="{{coverages.0.coverages.7.options.1.value}}"></td></tr>
-                <tr><td>Maternity 9 Months Waiting Period</td><td>{{coverages.0.coverages.8.options.0.value}}</td><td data-option="{{coverages.0.coverages.8.options.1.value}}"></td></tr>
-                <tr><td>Pre-Post Natal Expenses</td><td>{{coverages.0.coverages.9.options.0.value}}</td><td data-option="{{coverages.0.coverages.9.options.1.value}}"></td></tr>
-                <tr><td>New Born Baby Coverage</td><td>{{coverages.0.coverages.10.options.0.value}}</td><td data-option="{{coverages.0.coverages.10.options.1.value}}"></td></tr>
-                <tr><td>Corporate Buffer - Annual Amount</td><td>{{coverages.0.coverages.11.options.0.value}}</td><td data-option="{{coverages.0.coverages.11.options.1.value}}"></td></tr>
-                <tr><td>Corporate Buffer - Restrictions</td><td>{{coverages.0.coverages.12.options.0.value}}</td><td data-option="{{coverages.0.coverages.12.options.1.value}}"></td></tr>
-                <tr><td>Pre & Post Hospitalisation Expenses (30-60 Days)</td><td>{{coverages.0.coverages.13.options.0.value}}</td><td data-option="{{coverages.0.coverages.13.options.1.value}}"></td></tr>
-                <tr><td>Daily Room Rent Restriction</td><td>{{coverages.0.coverages.14.options.0.value}}</td><td data-option="{{coverages.0.coverages.14.options.1.value}}"></td></tr>
-                <tr><td>Ambulance Charges</td><td>{{coverages.0.coverages.15.options.0.value}}</td><td data-option="{{coverages.0.coverages.15.options.1.value}}"></td></tr>
-                <tr><td>Sub Limit of Ailments</td><td>{{coverages.0.coverages.16.options.0.value}}</td><td data-option="{{coverages.0.coverages.16.options.1.value}}"></td></tr>
-                <tr><td>Co-Payment</td><td>{{coverages.0.coverages.17.options.0.value}}</td><td data-option="{{coverages.0.coverages.17.options.1.value}}"></td></tr>
-                <tr><td>AYUSH Treatment</td><td>{{coverages.0.coverages.18.options.0.value}}</td><td data-option="{{coverages.0.coverages.18.options.1.value}}"></td></tr>
-                <tr><td>Dental Treatment</td><td>{{coverages.0.coverages.19.options.0.value}}</td><td data-option="{{coverages.0.coverages.19.options.1.value}}"></td></tr>
-                <tr><td>Cashless Facility</td><td>{{coverages.0.coverages.20.options.0.value}}</td><td data-option="{{coverages.0.coverages.20.options.1.value}}"></td></tr>
-                <tr><td>Mid-term Addition of Dependents</td><td>{{coverages.0.coverages.21.options.0.value}}</td><td data-option="{{coverages.0.coverages.21.options.1.value}}"></td></tr>
-                <tr><td>Claim Intimation</td><td>{{coverages.0.coverages.22.options.0.value}}</td><td data-option="{{coverages.0.coverages.22.options.1.value}}"></td></tr>
-                <tr><td>Claim Submission</td><td>{{coverages.0.coverages.23.options.0.value}}</td><td data-option="{{coverages.0.coverages.23.options.1.value}}"></td></tr>
-            </tbody>
-        </table>
-    </div>
+  <div class="table-container">
+      <table class="coverages-table">
+          <thead>
+              <tr>
+                  <th>Covers</th>
+                  <th>Option - 1</th>
+                  <th>Option - 2</th>
+                  <th>Option - 3</th>
+              </tr>
+          </thead>
+          <tbody id="coverage-body">
+              <tr><td>Family Definition</td><td>{{coverages.0.coverages.0.options.0.title}}</td><td data-option="{{coverages.0.coverages.0.options.0.title}}"></td><td data-option="{{coverages.0.coverages.0.options.0.title}}"></td></tr>
+              <tr><td>Family Size</td><td>{{coverages.0.coverages.0.options.0.value}}</td><td data-option="{{coverages.0.coverages.0.options.1.value}}"></td><td data-option="{{coverages.0.coverages.0.options.2.value}}"></td></tr>
+              <tr><td>Type of Cover</td><td>{{coverages.0.coverages.1.options.0.value}}</td><td data-option="{{coverages.0.coverages.1.options.1.value}}"></td><td data-option="{{coverages.0.coverages.1.options.2.value}}"></td></tr>
+              <tr><td>Sum Insured Per Family</td><td>{{coverages.0.coverages.2.options.0.value}}</td><td data-option="{{coverages.0.coverages.2.options.1.value}}"></td><td data-option="{{coverages.0.coverages.2.options.2.value}}"></td></tr>
+              <tr><td>Domiciliary Hospitalisation</td><td>{{coverages.0.coverages.3.options.0.value}}</td><td data-option="{{coverages.0.coverages.3.options.1.value}}"></td><td data-option="{{coverages.0.coverages.3.options.2.value}}"></td></tr>
+              <tr><td>Pre-existing Disease Exclusion</td><td>{{coverages.0.coverages.4.options.0.value}}</td><td data-option="{{coverages.0.coverages.4.options.1.value}}"></td><td data-option="{{coverages.0.coverages.4.options.2.value}}"></td></tr>
+              <tr><td>First 30 Days Waiting Period</td><td>{{coverages.0.coverages.5.options.0.value}}</td><td data-option="{{coverages.0.coverages.5.options.1.value}}"></td><td data-option="{{coverages.0.coverages.5.options.2.value}}"></td></tr>
+              <tr><td>1 / 2 / 4 Year Exclusion</td><td>{{coverages.0.coverages.6.options.0.value}}</td><td data-option="{{coverages.0.coverages.6.options.1.value}}"></td><td data-option="{{coverages.0.coverages.6.options.2.value}}"></td></tr>
+              <tr><td>Maternity Benefit</td><td>{{coverages.0.coverages.7.options.0.value}}</td><td data-option="{{coverages.0.coverages.7.options.1.value}}"></td><td data-option="{{coverages.0.coverages.7.options.2.value}}"></td></tr>
+              <tr><td>Maternity 9 Months Waiting Period</td><td>{{coverages.0.coverages.8.options.0.value}}</td><td data-option="{{coverages.0.coverages.8.options.1.value}}"></td><td data-option="{{coverages.0.coverages.8.options.2.value}}"></td></tr>
+              <tr><td>Pre-Post Natal Expenses</td><td>{{coverages.0.coverages.9.options.0.value}}</td><td data-option="{{coverages.0.coverages.9.options.1.value}}"></td><td data-option="{{coverages.0.coverages.9.options.2.value}}"></td></tr>
+              <tr><td>New Born Baby Coverage</td><td>{{coverages.0.coverages.10.options.0.value}}</td><td data-option="{{coverages.0.coverages.10.options.1.value}}"></td><td data-option="{{coverages.0.coverages.10.options.2.value}}"></td></tr>
+              <tr><td>Corporate Buffer - Annual Amount</td><td>{{coverages.0.coverages.11.options.0.value}}</td><td data-option="{{coverages.0.coverages.11.options.1.value}}"></td><td data-option="{{coverages.0.coverages.11.options.2.value}}"></td></tr>
+              <tr><td>Corporate Buffer - Restrictions</td><td>{{coverages.0.coverages.12.options.0.value}}</td><td data-option="{{coverages.0.coverages.12.options.1.value}}"></td><td data-option="{{coverages.0.coverages.12.options.2.value}}"></td></tr>
+              <tr><td>Pre & Post Hospitalisation Expenses (30-60 Days)</td><td>{{coverages.0.coverages.13.options.0.value}}</td><td data-option="{{coverages.0.coverages.13.options.1.value}}"></td><td data-option="{{coverages.0.coverages.13.options.2.value}}"></td></tr>
+              <tr><td>Daily Room Rent Restriction</td><td>{{coverages.0.coverages.14.options.0.value}}</td><td data-option="{{coverages.0.coverages.14.options.1.value}}"></td><td data-option="{{coverages.0.coverages.14.options.2.value}}"></td></tr>
+              <tr><td>Ambulance Charges</td><td>{{coverages.0.coverages.15.options.0.value}}</td><td data-option="{{coverages.0.coverages.15.options.1.value}}"></td><td data-option="{{coverages.0.coverages.15.options.2.value}}"></td></tr>
+              <tr><td>Sub Limit of Ailments</td><td>{{coverages.0.coverages.16.options.0.value}}</td><td data-option="{{coverages.0.coverages.16.options.1.value}}"></td><td data-option="{{coverages.0.coverages.16.options.2.value}}"></td></tr>
+              <tr><td>Co-Payment</td><td>{{coverages.0.coverages.17.options.0.value}}</td><td data-option="{{coverages.0.coverages.17.options.1.value}}"></td><td data-option="{{coverages.0.coverages.17.options.2.value}}"></td></tr>
+              <tr><td>AYUSH Treatment</td><td>{{coverages.0.coverages.18.options.0.value}}</td><td data-option="{{coverages.0.coverages.18.options.1.value}}"></td><td data-option="{{coverages.0.coverages.18.options.2.value}}"></td></tr>
+              <tr><td>Dental Treatment</td><td>{{coverages.0.coverages.19.options.0.value}}</td><td data-option="{{coverages.0.coverages.19.options.1.value}}"></td><td data-option="{{coverages.0.coverages.19.options.2.value}}"></td></tr>
+              <tr><td>Cashless Facility</td><td>{{coverages.0.coverages.20.options.0.value}}</td><td data-option="{{coverages.0.coverages.20.options.1.value}}"></td><td data-option="{{coverages.0.coverages.20.options.2.value}}"></td></tr>
+              <tr><td>Mid-term Addition of Dependents</td><td>{{coverages.0.coverages.21.options.0.value}}</td><td data-option="{{coverages.0.coverages.21.options.1.value}}"></td><td data-option="{{coverages.0.coverages.21.options.2.value}}"></td></tr>
+              <tr><td>Claim Intimation</td><td>{{coverages.0.coverages.22.options.0.value}}</td><td data-option="{{coverages.0.coverages.22.options.1.value}}"></td><td data-option="{{coverages.0.coverages.22.options.2.value}}"></td></tr>
+              <tr><td>Claim Submission</td><td>{{coverages.0.coverages.23.options.0.value}}</td><td data-option="{{coverages.0.coverages.23.options.1.value}}"></td><td data-option="{{coverages.0.coverages.23.options.2.value}}"></td></tr>
+          </tbody>
+      </table>
+  </div>
 </section>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    let rows = document.querySelectorAll("#coverage-body tr");
+  let rows = document.querySelectorAll("#coverage-body tr");
 
-    rows.forEach(row => {
-        let option1 = row.children[1].innerText.trim();
-        let option2Cell = row.children[2];
-        let option2 = option2Cell.getAttribute("data-option").trim();
+  rows.forEach(row => {
+      let option1 = row.children[1].innerText.trim();
+      let option2Cell = row.children[2];
+      let option3Cell = row.children[3];
 
-        if (option1 === option2) {
-            option2Cell.innerHTML = `<img src="{{tickSrc}}" alt="✓" style="width: 16px; height: 16px;">`;
-        } else {
-            option2Cell.innerText = option2;
-        }
-    });
+      let option2 = option2Cell.getAttribute("data-option").trim();
+      let option3 = option3Cell.getAttribute("data-option").trim();
+
+      if (option1 === option2) {
+          option2Cell.innerHTML = `<img src="{{tickSrc}}" alt="✓" style="width: 16px; height: 16px;">`;
+      } else {
+          option2Cell.innerText = option2;
+      }
+
+      if (option1 === option3) {
+          option3Cell.innerHTML = `<img src="{{tickSrc}}" alt="✓" style="width: 16px; height: 16px;">`;
+      } else {
+          option3Cell.innerText = option3;
+      }
+  });
 });
 </script>
 {{/if}}
